@@ -50,8 +50,10 @@ docker push YOUR-USER-NAME/getting-started
 
 Create a volume by using the docker volume create command.
 
-
+```
 docker volume create todo-db
+```
+
 Stop the todo app container once again in the Dashboard (or with docker rm -f <container-id>), as it is still running without using the persistent volume.
 
 Start the todo app container, but add the -v flag to specify a volume mount. We will use the named volume and mount it to /etc/todos, which will capture all files created at the path.
