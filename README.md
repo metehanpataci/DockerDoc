@@ -16,7 +16,7 @@ docker build -t getting-started .
 ## RUN
 docker run -d -p 80:80 docker/getting-started
 
-## Removing a container using the CLI¶
+## Removing a container using the CLI
 Get the ID of the container by using the docker ps command.
 
 ```
