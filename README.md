@@ -1,6 +1,10 @@
 # DockerDoc
 Docker commands and notes
 
+## RUN
+docker run -d -p 80:80 docker/getting-started
+
+
 
 ## F.A.Q
 
