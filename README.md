@@ -46,7 +46,31 @@ Now try your push command again. If you're copying the value from Docker Hub, yo
 ```
 docker push YOUR-USER-NAME/getting-started
 ```
+## Persisting DB
 
+Create a volume by using the docker volume create command.
+
+
+docker volume create todo-db
+Stop the todo app container once again in the Dashboard (or with docker rm -f <container-id>), as it is still running without using the persistent volume.
+
+Start the todo app container, but add the -v flag to specify a volume mount. We will use the named volume and mount it to /etc/todos, which will capture all files created at the path.
+
+
+docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+Once the container starts up, open the app and add a few items to your todo list.
+
+Items added to todo list
+
+Remove the container for the todo app. Use the Dashboard or docker ps to get the ID and then docker rm -f <container-id> to remove it.
+
+Start a new container using the same command from above.
+
+Open the app. You should see your items still in your list!
+
+Go ahead and remove the container when you're done checking out your list.
+
+Hooray! You've now learned how to persist data!
 
 ## Removing a container using the CLI
 Get the ID of the container by using the docker ps command.
