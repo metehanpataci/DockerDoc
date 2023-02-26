@@ -90,6 +90,25 @@ Once the container has stopped, you can remove it by using the docker rm command
 ```
 docker rm <the-container-id>
 ```
+  
+Diving into our Volume¶
+A lot of people frequently ask "Where is Docker actually storing my data when I use a named volume?" If you want to know, you can use the docker volume inspect command.
+
+```
+docker volume inspect todo-db
+[
+    {
+        "CreatedAt": "2019-09-26T02:18:36Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/todo-db/_data",
+        "Name": "todo-db",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
+The Mountpoint is the actual location on the disk where the data is stored. Note that on most machines, you will need to have root access to access this directory from the host. But, that's where it is!
 
 ## F.A.Q
 
