@@ -16,6 +16,38 @@ docker build -t getting-started .
 ## RUN
 docker run -d -p 80:80 docker/getting-started
 
+## Create Repo
+
+docker push YOUR-USER-NAME/getting-started
+
+### Pushing our Image
+In the command line, try running the push command you see on Docker Hub. Note that your command will be using your namespace, not "docker".
+
+```
+$ docker push docker/getting-started
+```
+
+The push refers to repository [docker.io/docker/getting-started]
+An image does not exist locally with the tag: docker/getting-started
+Why did it fail? The push command was looking for an image named docker/getting-started, but didn't find one. If you run docker image ls, you won't see one either.
+
+To fix this, we need to "tag" our existing image we've built to give it another name.
+
+Login to Docker Hub by either clicking on the "Sign In" button in Docker Desktop or using the command docker login -u YOUR-USER-NAME.
+
+Use the docker tag command to give the getting-started image a new name. Be sure to swap out YOUR-USER-NAME with your Docker ID.
+
+```
+docker tag getting-started YOUR-USER-NAME/getting-started
+```
+
+Now try your push command again. If you're copying the value from Docker Hub, you can drop the tagname portion, as we didn't add a tag to the image name. If you don't specify a tag, Docker will use a tag called latest.
+
+```
+docker push YOUR-USER-NAME/getting-started
+```
+
+
 ## Removing a container using the CLI
 Get the ID of the container by using the docker ps command.
 
