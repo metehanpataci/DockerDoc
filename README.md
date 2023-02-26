@@ -93,6 +93,16 @@ docker volume inspect todo-db
 ]
 ```
 The Mountpoint is the actual location on the disk where the data is stored. Note that on most machines, you will need to have root access to access this directory from the host. But, that's where it is!
+  
+Quick Volume Type Comparisons¶
+Bind mounts and named volumes are the two main types of volumes that come with the Docker engine. However, additional volume drivers are available to support other use cases (SFTP, Ceph, NetApp, S3, and more).
+
+Named Volumes	Bind Mounts
+Host Location	Docker chooses	You control
+Mount Example (using -v)	my-volume:/usr/local/data	/path/to/data:/usr/local/data
+Populates new volume with container contents	Yes	No
+Supports Volume Drivers	Yes	No
+
 
 ## Removing a container using the CLI
 Get the ID of the container by using the docker ps command.
