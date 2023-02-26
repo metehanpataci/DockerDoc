@@ -58,8 +58,9 @@ Stop the todo app container once again in the Dashboard (or with docker rm -f <c
 
 Start the todo app container, but add the -v flag to specify a volume mount. We will use the named volume and mount it to /etc/todos, which will capture all files created at the path.
 
-
+```
 docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+```
 Once the container starts up, open the app and add a few items to your todo list.
 
 Items added to todo list
