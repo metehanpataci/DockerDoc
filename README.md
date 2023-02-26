@@ -9,6 +9,8 @@ Docker commands and notes
 **Solution 1:** Restart docker Desktop
 
 **Solution 2:**
+'''
 cd "C:\Program Files\Docker\Docker"
 
 ./DockerCli.exe -SwitchLinuxEngine
+'''
